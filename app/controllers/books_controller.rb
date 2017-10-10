@@ -26,6 +26,22 @@ class BooksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    # select the specific book user is editing along with all it's associated data in book_params
+    if @book.update(book_params)
+      redirect_to book_path(@book)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+  end
+
+
   private
     # when a user sends information, this params holds that data from some form
     def book_params
