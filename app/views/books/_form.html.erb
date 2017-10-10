@@ -1,6 +1,6 @@
 <%# Uses simpleform gem with @book instance var %>
 
-<%= simple_form_for @book do |f| %>
+<%= simple_form_for @book, :html => { :multipart => true } do |f| %>
   <%# in @categories, we are running a code that maps and displays all the options for book categories in the dropdown %>
   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a Category") %>
   <%= f.input :title, label: "Book Title" %>
