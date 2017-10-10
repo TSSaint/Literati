@@ -14,10 +14,12 @@ class BooksController < ApplicationController
     # instance variable - what is used in the views
     # @book = associated with the current user
     @book = current_user.books.build
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def create
     @book = current_user.books.build(book_params)
+    @book.category_id = params[:category_id]
     # @book = associated with the current user
     if @book.save
       # successful book add sends user back to index page
@@ -29,9 +31,11 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def update
+    @book.category_id = params[:category_id]
     # select the specific book user is editing along with all it's associated data in book_params
     if @book.update(book_params)
       redirect_to book_path(@book)
@@ -50,7 +54,7 @@ class BooksController < ApplicationController
   private
     # when a user sends information, this params holds that data from some form
     def book_params
-      params.require(:book).permit(:title, :description, :author)
+      params.require(:book).permit(:title, :description, :author, :category_id)
     end
 
     # before action-defined
