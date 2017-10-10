@@ -14,7 +14,7 @@ class BooksController < ApplicationController
     # instance variable - what is used in the views
     # @book = associated with the current user
     @book = current_user.books.build
-    @categories = Category.all.map{ |cat| [c.name, c.id] }
+    @categories = Category.all.map{ |cat| [cat.name, cat.id] }
   end
 
   def create
@@ -52,7 +52,7 @@ class BooksController < ApplicationController
   private
     # when a user sends information, this params holds that data from some form
     def book_params
-      params.require(:book).permit(:title, :description, :author)
+      params.require(:book).permit(:title, :description, :author, :category_id)
     end
 
     # before action-defined
