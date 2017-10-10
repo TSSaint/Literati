@@ -19,6 +19,7 @@ class BooksController < ApplicationController
 
   def create
     @book = current_user.books.build(book_params)
+    @book.category_id = params[:category_id]
     # @book = associated with the current user
     if @book.save
       # successful book add sends user back to index page
