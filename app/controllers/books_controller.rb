@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
   
   def index
+    # order by newest
+    @books = Book.all.order("created_at DESC")
   end
 
   def new
