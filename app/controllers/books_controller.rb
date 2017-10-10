@@ -39,6 +39,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    @book.destroy
+    # sends user back to index page
+    redirect_to root_path
   end
 
 
