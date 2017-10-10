@@ -12,11 +12,13 @@ class BooksController < ApplicationController
 
   def new
     # instance variable - what is used in the views
-    @book = Book.new
+    # @book = associated with the current user
+    @book = current_user.books.build
   end
 
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.build(book_params)
+    # @book = associated with the current user
     if @book.save
       # successful book add sends user back to index page
       redirect_to root_path
