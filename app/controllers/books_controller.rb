@@ -9,6 +9,13 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+
+    if @book.save
+      # successful book add sends user back to index page
+      redirect_to root_path
+    else
+      # otherwise, render a new form
+      render 'new'
   end
 
   private
