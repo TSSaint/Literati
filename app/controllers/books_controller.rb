@@ -14,6 +14,7 @@ class BooksController < ApplicationController
     # instance variable - what is used in the views
     # @book = associated with the current user
     @book = current_user.books.build
+    @categories = Category.all.map{ |cat| [c.name, c.id] }
   end
 
   def create
