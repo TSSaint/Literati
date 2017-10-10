@@ -31,9 +31,11 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def update
+    @book.category_id = params[:category_id]
     # select the specific book user is editing along with all it's associated data in book_params
     if @book.update(book_params)
       redirect_to book_path(@book)
