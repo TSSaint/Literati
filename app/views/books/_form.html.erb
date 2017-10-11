@@ -6,7 +6,7 @@
 
   <%# f.input :year, collection: 1500..2017, prompt: "Select your year", selected: 2017 %>
 
-  <%= f.file_field :book_img %>
+  <%= f.file_field :book_img, required: true %>
   <%= f.input :title, label: "Book Title" %>
   <%= f.input :description %>
   <%= f.input :author %>
