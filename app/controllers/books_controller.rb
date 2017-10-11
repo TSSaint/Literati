@@ -62,7 +62,7 @@ class BooksController < ApplicationController
   private
     # when a user sends information, this params holds that data from some form
     def book_params
-      params.require(:book).permit(:title, :description, :author, :category_id)
+      params.require(:book).permit(:title, :description, :author, :category_id, :book_img)
     end
 
     # before action-defined
