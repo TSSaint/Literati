@@ -3,7 +3,10 @@
 <%= simple_form_for @book, :html => { :multipart => true } do |f| %>
   <%# in @categories, we are running a code that maps and displays all the options for book categories in the dropdown %>
   <%= select_tag(:category_id, options_for_select(@categories), label: 'Select a Category', :error => "REQUIRED") %>
+
   <%# f.input :year, collection: 1500..2017, prompt: "Select your year", selected: 2017 %>
+
+  <%= f.file_field :book_img %>
   <%= f.input :title, label: "Book Title" %>
   <%= f.input :description %>
   <%= f.input :author %>
