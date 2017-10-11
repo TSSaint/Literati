@@ -2,11 +2,14 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :destroy]
   
   def index
+    # if nothing is selected in category
     if params[:category].blank?
     # order by newest
       @books = Book.all.order("created_at DESC")
     else
+      # set the category id equaly to the id of the book
       @category_id = Category.find_by(name: params[:category]).id
+      # set books = to the range of items where the @category_id in the database is equal to the one selected in @category_id via dropdown
       @books = Book.where(:category_id => @category_id).order("created_at DESC")
     end
   end
