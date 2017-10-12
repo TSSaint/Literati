@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_book
+  before_action :find_review, only: [:edit, :update, :destroy]
 
   def new
     @review = Review.new
@@ -20,7 +21,6 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find(params[:id])
   end
 
   def update
@@ -43,4 +43,7 @@ class ReviewsController < ApplicationController
       # find current book that the review is associated with it
     end
 
+    def find_review
+      @review = Review.find(params[:id])
+    end
 end
