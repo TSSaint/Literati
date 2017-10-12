@@ -1,24 +1,24 @@
-# README
+# Literati
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Literati is a book rating and review web app that stores users' collections of books. 
 
-Things you may want to cover:
+### Technologies:
 
-* Ruby version
+- Ruby/Ruby on Rails
+- JavaScript/jQuery
+- Sass
+- Bootstrap
+Packages:
+- jQuery
+- Devise
+- Paperclip
+- SimpleForm
 
-* System dependencies
 
-* Configuration
+### Features for the Future:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+More content!: 
+- Order/search by book title
+- Book groups
+- Forum for book discussion
+- More dynamic animations
