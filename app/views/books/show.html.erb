@@ -16,6 +16,18 @@
 
 </div>
 
+<div class="row">
+
+  <div class="col-md-4">
+
+    <div>
+      <%= link_to "Add Review", new_book_review_path(@book) %>
+    <div>
+
+  </div>
+
+</div>
+
 <% if @book.user_id == current_user.id %>
 
   <% if user_signed_in? %>
