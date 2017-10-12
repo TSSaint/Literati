@@ -6,6 +6,11 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+
+    if @review.save
+      redirect_to book_path(@book)
+    else
+      render 'new'
   end
 
   private
