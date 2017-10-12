@@ -10,6 +10,9 @@
     <h2><%= @book.title %></h2>
     <h3><%= @book.author %></h3>
     <h5>Category: <%= @book.category.name %></h5>
+    <h2>Average Rating</h2>
+    <div class="average-review-rating" data-score=<%= @average_review %>></div>
+    <span>Based on <%= @book.reviews.count %> User Review(s)</span>
     <p><%= @book.description %></p>
 
   </div>
@@ -46,6 +49,16 @@
 
 <script>
   $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/' 
+  });
+</script>
+
+<script>
+  $('.average-review-rating').raty({
     readOnly: true,
     score: function() {
       return $(this).attr('data-score');
