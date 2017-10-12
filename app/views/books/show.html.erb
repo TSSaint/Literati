@@ -20,6 +20,9 @@
 
   <div class="col-md-4">
     <!-- ratings here -->
+
+    <%= render @book.reviews %>
+
     <div>
       <%= link_to "Add Review", new_book_review_path(@book) %>
     <div>
