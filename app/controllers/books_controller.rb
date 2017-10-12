@@ -16,6 +16,13 @@ class BooksController < ApplicationController
 
   # will show individual books
   def show
+    if @book.reviews.blank?
+      # if no reviews set this val to none
+      @average_review = 0;
+    else
+      # round the reviews by half a star approx
+      @average_review = @book.reviews.average(:rating).round(2)
+    end
   end
 
   def new
