@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :find_book
 
   def new
     @review = Review.new
@@ -15,6 +16,7 @@ class ReviewsController < ApplicationController
       redirect_to book_path(@book)
     else
       render 'new'
+    end
   end
 
   private
@@ -22,8 +24,9 @@ class ReviewsController < ApplicationController
       params.require(:review).permit(:rating, :comment)
     end
 
-    def
+    def find_book
       @book = Book.find(params[:book_id])
+      # find current book that the review is associated with it
     end
 
 end
