@@ -16,3 +16,14 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+/* BOOKS HEIGHT SPECIFIED */
+.book {
+  height: 350px;
+  width: 250px;
+}
+
+.book-show {
+  height: 475px;
+  width: 325px;
+}
