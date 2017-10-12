@@ -7,17 +7,17 @@ Literati is a book rating and review web app that stores users' collections of b
 - Ruby/Ruby on Rails
 - JavaScript/jQuery
 - Sass
-- Bootstrap
-Packages:
+<br>
+Bootstrap Packages:
 - jQuery
 - Devise
 - Paperclip
 - SimpleForm
 
-
 ### Features for the Future:
 
-More content!: 
+More content: 
+- Styling (work in progress)
 - Order/search by book title
 - Book groups
 - Forum for book discussion
