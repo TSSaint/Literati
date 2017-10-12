@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.integer :rating
       t.text :comment
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
