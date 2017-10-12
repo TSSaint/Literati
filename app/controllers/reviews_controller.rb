@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.book_id = @book.book_id
+    @review.book_id = @book.id
     @review.user_id = current_user.id
 
     # associate current review with book and user
