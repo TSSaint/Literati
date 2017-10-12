@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :find_book
   before_action :find_review, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :has_reviewed, only: [:new]
 
   def new
     @review = Review.new
@@ -51,4 +53,10 @@ class ReviewsController < ApplicationController
     def find_review
       @review = Review.find(params[:id])
     end
+
+    def has_reviewed
+    if current_user.reviews.exists?(book: @book)
+      redirect_to book_path(@book), notice: "You've already reviewed this book. You may edit your old review."
+    end
+  end
 end
